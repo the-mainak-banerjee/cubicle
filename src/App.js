@@ -1,4 +1,5 @@
 import { Routes, Route }  from 'react-router-dom'
+import SideNavBar from './components/ui/sideNavBar/SideNavBar';
 import CreateWorkspace from './pages/auth/CreateWorkspace';
 import ForgotPassword from './pages/auth/ForgotPassword';
 import Login from './pages/auth/Login';
@@ -20,28 +21,31 @@ import Home from "./pages/home/Home";
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<Home/>}/>
+    <>
+      <SideNavBar/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
 
-      <Route path='/signup' element={<Signup/>}/>
-      <Route path='/login' element={<Login/>}/>
-      <Route path='/forgotpassword' element={<ForgotPassword/>}/>
-      <Route path='/createworkspace' element={<CreateWorkspace/>}/>
+        <Route path='/signup' element={<Signup/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/forgotpassword' element={<ForgotPassword/>}/>
+        <Route path='/createworkspace' element={<CreateWorkspace/>}/>
 
-      <Route path='/database' element={<Database/>}/>
-      <Route path='/database/:contactId' element={<ContactDetails/>}/>
+        <Route path='/database' element={<Database/>}/>
+        <Route path='/database/:contactId' element={<ContactDetails/>}/>
 
-      <Route path='/emails' element={<EmailSender/>}/>
-      <Route path='/emails/:emailId/edit' element={<CreateEmail/>}/>
-      <Route path='/emails/:emailId/send' element={<EmailSender/>}/>
-      <Route path='/emails/:emailId/view' element={<EmailDetails/>}/>
+        <Route path='/emails' element={<EmailSender/>}/>
+        <Route path='/emails/:emailId/edit' element={<CreateEmail/>}/>
+        <Route path='/emails/:emailId/send' element={<EmailSender/>}/>
+        <Route path='/emails/:emailId/view' element={<EmailDetails/>}/>
 
-      <Route path='/certificate' element={<CertificateGenerator/>}/>
-      <Route path='/certificate/templates' element={<DesignCertificate/>}/>
-      <Route path='/certificate/:certificateId/customize' element={<CustomizeTemplate/>}/>
+        <Route path='/certificate' element={<CertificateGenerator/>}/>
+        <Route path='/certificate/templates' element={<DesignCertificate/>}/>
+        <Route path='/certificate/:certificateId/customize' element={<CustomizeTemplate/>}/>
 
-      <Route path='/*' element={<FourOFour/>}/>
-    </Routes>
+        <Route path='/*' element={<FourOFour/>}/>
+      </Routes>
+    </>
   );
 }
 
