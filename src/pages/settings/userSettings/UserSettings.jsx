@@ -1,13 +1,13 @@
 import { Text } from '@chakra-ui/react'
 import React from 'react'
-import Skeleton from '../../components/ui/skeleton/Skeleton'
+import Skeleton from '../../../components/ui/skeleton/Skeleton'
 
-const ContactDetails = () => {
+const UserSettings = () => {
   return (
     <>
       <Skeleton
-         isBack={true}
-         title='Contact Name'
+         isBack={false}
+         title='Account Settings'
          isSearch={false}
       >
         <Text>Add Your Code Here</Text>
@@ -16,4 +16,4 @@ const ContactDetails = () => {
   )
 }
 
-export default ContactDetails
+export default UserSettings

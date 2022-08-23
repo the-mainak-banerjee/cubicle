@@ -1,10 +1,19 @@
+import { Text } from '@chakra-ui/react'
 import React from 'react'
+import Skeleton from '../../components/ui/skeleton/Skeleton'
 
 const CertificateGenerator = () => {
   return (
-    <div>
-      This is certificate Generator page
-    </div>
+    <>
+      <Skeleton
+        isBack={false}
+        title='Certificate Generator'
+        isSearch={true}
+        buttonText='Create New'
+      >
+        <Text>Add Your Code Here</Text>
+      </Skeleton>
+    </>
   )
 }
 

@@ -1,10 +1,19 @@
+import { Text } from '@chakra-ui/react'
 import React from 'react'
+import Skeleton from '../../components/ui/skeleton/Skeleton'
 
 const EmailDetails = () => {
   return (
-    <div>
-      This is Individual Email Details Page
-    </div>
+    <>
+    <Skeleton
+      isBack={true}
+      title='Email Name'
+      isSearch={false}
+      buttonText='Duplicate Email'
+    >
+      <Text>Add Your Code Here</Text>
+    </Skeleton>
+  </>
   )
 }
 

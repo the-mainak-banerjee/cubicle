@@ -4,7 +4,7 @@ export const ButtonStyles = {
   // style object for base or default style
   baseStyle: {
     borderRadius: 'lg',
-    fontWeight: 'semibold'
+    fontWeight: 'normal',
   },
   // styles for different sizes ("sm", "md", "lg")
   sizes: {},
