@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Input,Stack,Button, Box, Center, Heading, Flex, useColorModeValue, Text, FormControl } from '@chakra-ui/react'
+import { Input,Stack,Button, Box, Center, Heading, Flex, useColorModeValue, Text, FormControl, Link, Redirect} from '@chakra-ui/react'
 
 
    function ForgotPassword() {
@@ -8,24 +8,14 @@ import { Input,Stack,Button, Box, Center, Heading, Flex, useColorModeValue, Text
       
     return (
       <>
-
+      <Flex bg='ternary' minHeight='100vh' justifyContent="Center">
       <Center p={20}>
-        <Box boxShadow='sm'  rounded='md' bg='white' p={20} border='1px' borderColor='gray.200' mt={12}>
-      <Stack
-        // spacing={4}
-        // w={'full'}
-        // maxW={'md'}
-        // bg={useColorModeValue('white', 'gray.700')}
-        // rounded={'xl'}
-        
-        // boxShadow={'sm'}
-        // p={6}
-        // my={12}
-        >
-          <center>
+        <Box boxShadow='md'  rounded={30} bg='white' p={20} border='1px' borderColor='gray.200'>
+      <Stack>
+          <Center>
         <Heading lineHeight={1.1} fontSize={{ base: '2xl', md: '3xl' }} as='h3' size='xl' fontWeight={500} mb={'7%'}>
           Forgot your password?
-        </Heading></center>
+        </Heading></Center>
         <Text
           fontSize={{ base: 'sm', sm: 'md' }}
           color={useColorModeValue('gray.800', 'gray.400')}>
@@ -38,19 +28,30 @@ import { Input,Stack,Button, Box, Center, Heading, Flex, useColorModeValue, Text
             type="email"  mb={5}
           />
         </FormControl>
+        
         <Stack spacing={6}>
+        
           <Button
             bg={'blue.400'}
             color={'white'}
             _hover={{
               bg: 'blue.500',
             }}>
-            Request Reset
+            Reset Password
           </Button>
         </Stack>
+
+       
       </Stack>
+      <Text
+          fontSize={{ base: 'sm', sm: 'md' }} textAlign='center'
+          color={useColorModeValue('gray.800', 'gray.400')} mt={'3'}>
+          Back to Login
+        
+        </Text>
       </Box>
   </Center>
+  </Flex>
       </>
     )
   }

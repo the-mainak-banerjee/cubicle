@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Input,Stack,InputLeftAddon,InputGroup,InputRightElement,Button, Box, Center, Heading} from '@chakra-ui/react'
+import { Input,Stack,InputLeftAddon,InputGroup,InputRightElement,Button, Box, Center, Heading, Flex,Text,useColorModeValue} from '@chakra-ui/react'
 
 
    function Signup() {
@@ -10,13 +10,14 @@ import { Input,Stack,InputLeftAddon,InputGroup,InputRightElement,Button, Box, Ce
       
     return (
       <>
+      <Flex bg='ternary' minHeight='100vh' justifyContent="Center"> 
       <Center>
-<Box boxShadow='sm'  rounded='md' bg='white' p={20} border='1px' borderColor='gray.200' mt={['2%']}>
+<Box boxShadow='md' rounded={30}  bg='white' p={20} border='1px' borderColor='gray.200' mt={['2%']}>
 <Stack spacing={7}>
-<center>
+<Center>
 <Heading as='h2' size='2xl' fontWeight={550}>
     Sign up
-  </Heading></center>
+  </Heading></Center>
   <Input variant='outline' placeholder='Username' />
   <Input  variant='outline' placeholder='Email' />
   <InputGroup>
@@ -43,15 +44,26 @@ import { Input,Stack,InputLeftAddon,InputGroup,InputRightElement,Button, Box, Ce
         type={show ? 'text' : 'password'}
         placeholder='Confirm Password'
       />
-      
+      <InputRightElement  width='4.5rem'>
+        <Button h='1.75rem' size='sm' onClick={handleClick}>
+          {show ? 'Hide' : 'Show'}
+        </Button>
+      </InputRightElement>
     </InputGroup>
 
-    <Button colorScheme='blue' size='md'>
+    <Button colorScheme='blue' size='md' color='white'>
     Signup
   </Button>
+  <Text
+          fontSize={{ base: 'sm', sm: 'md' }} textAlign='center'
+          color={useColorModeValue('gray.800', 'gray.400')} mt={'3'}>
+          Already have an account? Login
+        
+        </Text>
   </Stack>
   </Box>
   </Center>
+  </Flex>
       </>
     )
   }
