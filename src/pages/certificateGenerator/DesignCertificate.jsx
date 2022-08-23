@@ -1,10 +1,19 @@
 import React from 'react'
+import BodyWrapper from '../../components/ui/bodyWrapper/BodyWrapper'
+import NavBar from '../../components/ui/navBar/NavBar'
 
 const DesignCertificate = () => {
   return (
-    <div>
-      Design Certificate Page
-    </div>
+    <>
+      <NavBar
+        isBack={true}
+        title='Create Certificate'
+        isSearch={false}
+      />
+      <BodyWrapper>
+        Add Your Code Here
+      </BodyWrapper>
+    </>
   )
 }
 

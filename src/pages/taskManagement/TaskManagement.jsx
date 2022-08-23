@@ -1,10 +1,11 @@
 import React from 'react'
+import NavBar from '../../components/ui/navBar/NavBar'
 
 const TaskManagement = () => {
   return (
-    <div>
-      This is task Management page
-    </div>
+    <>
+      <NavBar/>
+    </>
   )
 }
 

@@ -1,10 +1,20 @@
 import React from 'react'
+import BodyWrapper from '../../components/ui/bodyWrapper/BodyWrapper'
+import NavBar from '../../components/ui/navBar/NavBar'
 
 const EmailSender = () => {
   return (
-    <div>
-      This is Bulk Email Sender Dashboard
-    </div>
+    <>
+      <NavBar
+        isBack={false}
+        title='Email Management'
+        isSearch={true}
+        buttonText='New Email'
+      />
+      <BodyWrapper>
+        Add Your Code Here
+      </BodyWrapper>
+    </>
   )
 }
 
