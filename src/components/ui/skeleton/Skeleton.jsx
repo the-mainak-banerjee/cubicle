@@ -1,10 +1,11 @@
 import React from 'react'
 import {  Box, Drawer, DrawerContent, useDisclosure } from '@chakra-ui/react'
-import SideBarContent from './SideBarContent';
-import TopBar from './TopBar';
+import SideBarContent from './navBar/SideBarContent';
+import TopBar from './navBar/TopBar';
+import BodyWrapper from './bodyWrapper/BodyWrapper';
 
 
-const NavBar = ({isBack, title, rightContent, isSearch, buttonText}) => {
+const Skeleton = ({isBack, title, rightContent, isSearch, buttonText, children}) => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -39,8 +40,9 @@ const NavBar = ({isBack, title, rightContent, isSearch, buttonText}) => {
           <SideBarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
+      <BodyWrapper children={children}/>
     </>
   )
 }
 
-export default NavBar
+export default Skeleton

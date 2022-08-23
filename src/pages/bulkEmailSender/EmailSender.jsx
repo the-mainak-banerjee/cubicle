@@ -1,19 +1,18 @@
+import { Text } from '@chakra-ui/react'
 import React from 'react'
-import BodyWrapper from '../../components/ui/bodyWrapper/BodyWrapper'
-import NavBar from '../../components/ui/navBar/NavBar'
+import Skeleton from '../../components/ui/skeleton/Skeleton'
 
 const EmailSender = () => {
   return (
     <>
-      <NavBar
+      <Skeleton
         isBack={false}
         title='Email Management'
         isSearch={true}
         buttonText='New Email'
-      />
-      <BodyWrapper>
-        Add Your Code Here
-      </BodyWrapper>
+      >
+        <Text>Add Your Code Here</Text>
+      </Skeleton>
     </>
   )
 }

@@ -1,12 +1,11 @@
 import React from 'react'
-import NavBar from '../../components/ui/navBar/NavBar'
+import Skeleton from '../../components/ui/skeleton/Skeleton'
 import { Text } from '@chakra-ui/react'
-import BodyWrapper from '../../components/ui/bodyWrapper/BodyWrapper'
 
 const CreateEmail = () => {
   return (
     <>
-      <NavBar
+      <Skeleton
         isBack={true}
         title='Email Name'
         rightContent={
@@ -16,10 +15,9 @@ const CreateEmail = () => {
             <Text>Sent</Text>
           </>
         }
-      />
-      <BodyWrapper>
-        Add Your Code Here
-      </BodyWrapper>
+      >
+        <Text>Add Your Code Here</Text>
+      </Skeleton>
     </>
   )
 }

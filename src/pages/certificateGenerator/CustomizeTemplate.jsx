@@ -1,19 +1,18 @@
+import { Text } from '@chakra-ui/react'
 import React from 'react'
-import BodyWrapper from '../../components/ui/bodyWrapper/BodyWrapper'
-import NavBar from '../../components/ui/navBar/NavBar'
+import Skeleton from '../../components/ui/skeleton/Skeleton'
 
 const CustomizeTemplate = () => {
   return (
     <>
-      <NavBar
+      <Skeleton
         isBack={true}
         title='Certificate Generator'
         isSearch={false}
         buttonText='Save'
-      />
-      <BodyWrapper>
-        Add Your Code Here
-      </BodyWrapper>
+      >
+        <Text>Add Your Code Here</Text>
+      </Skeleton>
     </>
   )
 }

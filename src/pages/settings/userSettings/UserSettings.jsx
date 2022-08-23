@@ -1,16 +1,17 @@
+import { Text } from '@chakra-ui/react'
 import React from 'react'
-import BodyWrapper from '../../../components/ui/bodyWrapper/BodyWrapper'
-import NavBar from '../../../components/ui/navBar/NavBar'
+import Skeleton from '../../../components/ui/skeleton/Skeleton'
 
 const UserSettings = () => {
   return (
     <>
-      <NavBar
+      <Skeleton
          isBack={false}
          title='Account Settings'
          isSearch={false}
-      />
-      <BodyWrapper>I am body</BodyWrapper>
+      >
+        <Text>Add Your Code Here</Text>
+      </Skeleton>
     </>
   )
 }
