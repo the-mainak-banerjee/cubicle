@@ -3,7 +3,7 @@ import React from 'react'
 import { FaArrowDown } from 'react-icons/fa'
 import SubNavItem from './SubNavItem'
 
-const SubNavBar = ({linkItems, rightAction}) => {
+const SubNavBar = ({linkItems, rightAction, target}) => {
   return (
     <>
         <Flex>
@@ -12,7 +12,7 @@ const SubNavBar = ({linkItems, rightAction}) => {
                     <SubNavItem
                         key={link.name}
                         name={link.name}
-                        target={link.target}
+                        target={target}
                         search={link.search}
                         icon={link.icon}
                     />

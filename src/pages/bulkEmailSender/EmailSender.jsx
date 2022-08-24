@@ -8,9 +8,9 @@ import EmailCardSmall from '../../components/bulkEmailSender/EmailCardSmall'
 import { useSearchParams } from 'react-router-dom'
 
 const linkItems = [
-  {name: 'All', icon: FaEnvelope, target: 'emails', search: '?status=all'},
-  {name: 'Draft', icon: FaEnvelope, target: 'emails', search: '?status=draft'},
-  {name: 'Sent', icon: FaEnvelope, target: 'emails', search: '?status=sent'},
+  {name: 'All', icon: FaEnvelope, search: '?status=all'},
+  {name: 'Draft', icon: FaEnvelope, search: '?status=draft'},
+  {name: 'Sent', icon: FaEnvelope, search: '?status=sent'},
 ]
 
 const EmailSender = () => {
@@ -28,6 +28,7 @@ const EmailSender = () => {
         <SubNavBar
           linkItems={linkItems}
           rightAction={true}
+          target={'emails'}
         />
         <Flex flexDirection='column'>
           {
