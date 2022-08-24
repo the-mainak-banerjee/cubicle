@@ -13,7 +13,6 @@ const linkItems = [
 const EmailDetails = () => {
   const params = useParams()
 
-  console.log(params)
 
   return (
     <>
