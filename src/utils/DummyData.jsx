@@ -1,6 +1,6 @@
 export const email = [
     {
-        id: 456987123,
+        id: '456987123',
         subjectLine: 'Here Is Your Certificate',
         content: 'email content goes here', // get from text editor data
         status: 'sent',
@@ -14,7 +14,7 @@ export const email = [
         workspaceId: 'workspaceId'
     },
     {
-        id: 321789654,
+        id: '321789654',
         subjectLine: 'Workshop Starts Today',
         content: 'email content goes here', // get from text editor data
         status: 'draft',
