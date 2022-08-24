@@ -26,7 +26,7 @@ const EmailCardSmall = ({id, subjectLine, status, publishedDate, engagement}) =>
                 <Button variant='main'>View Details</Button>
             </Link>}
         </Flex>
-        <Divider borderColor='black'/>
+        <Divider borderColor='GrayText'/>
     </Box>
   )
 }
