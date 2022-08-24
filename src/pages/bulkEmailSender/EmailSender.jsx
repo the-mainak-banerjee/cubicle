@@ -21,6 +21,7 @@ const EmailSender = () => {
       >
         <SubNavBar
           linkItems={linkItems}
+          rightAction={true}
         />
       </Skeleton>
     </>
