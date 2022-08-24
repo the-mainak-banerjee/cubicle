@@ -1,19 +1,39 @@
-import { Text } from '@chakra-ui/react'
 import React from 'react'
+import { FaEnvelope } from 'react-icons/fa'
+import { useParams } from 'react-router-dom'
 import Skeleton from '../../components/ui/skeleton/Skeleton'
+import SubNavBar from '../../components/ui/subNavBar/SubNavBar'
+
+const linkItems = [
+  {name: 'Content', icon: FaEnvelope, search: '?status=content'},
+  {name: 'Recipients', icon: FaEnvelope, search: '?status=recipients'},
+  {name: 'Engagement', icon: FaEnvelope, search: '?status=engagement'},
+]
 
 const EmailDetails = () => {
+  const params = useParams()
+
+  console.log(params)
+
   return (
     <>
-    <Skeleton
-      isBack={true}
-      title='Email Name'
-      isSearch={false}
-      buttonText='Duplicate Email'
-    >
-      <Text>Add Your Code Here</Text>
-    </Skeleton>
-  </>
+      <Skeleton
+        isBack={true}
+        title='Email Name'
+        isSearch={false}
+        buttonText='Duplicate Email'
+      >
+
+        <SubNavBar
+          linkItems={linkItems}
+          rightAction={false}
+          target={`emails/${params.emailId}/view`}
+        />
+
+
+
+      </Skeleton>
+    </>
   )
 }
 
