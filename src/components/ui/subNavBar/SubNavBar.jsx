@@ -2,7 +2,7 @@ import { Divider, Flex, Spacer } from '@chakra-ui/react'
 import React from 'react'
 import SubNavItem from './SubNavItem'
 
-const SubNavBar = ({linkItems, rightAction, target}) => {
+const SubNavBar = ({linkItems, target}) => {
   return (
     <>
         <Flex>
