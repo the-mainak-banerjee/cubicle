@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 const NavItem = ({name, icon, target, ...rest}) => {
   return (
-    <Link as={NavLink} to={`/${target}`} _activeLink={{color: 'secondaryWhiten'}} style={{ textDecoration: 'none' }} _focus={{  bg: 'secondary', color: 'white', borderRadius:'lg' }}>
+    <Link as={NavLink} to={`/${target}`} _activeLink={{color: 'secondaryWhiten'}} style={{ textDecoration: 'none' }} _focus={{  boxShadow:'lg' }}>
         <Flex
             align="center"
             p="4"
