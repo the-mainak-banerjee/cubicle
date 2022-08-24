@@ -4,6 +4,7 @@ import Skeleton from '../../components/ui/skeleton/Skeleton'
 import SubNavBar from '../../components/ui/subNavBar/SubNavBar'
 import { FaEnvelope } from 'react-icons/fa'
 
+
 const linkItems = [
   {name: 'All', icon: FaEnvelope, target: 'emails', search: '?status=all'},
   {name: 'Draft', icon: FaEnvelope, target: 'emails', search: '?status=draft'},
