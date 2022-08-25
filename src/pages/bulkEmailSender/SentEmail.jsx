@@ -1,5 +1,7 @@
 import { Text } from '@chakra-ui/react'
 import React from 'react'
+import EmailSenderFooter from '../../components/bulkEmailSender/EmailSenderFooter'
+import EmailSenderHeaderAction from '../../components/bulkEmailSender/EmailSenderHeaderAction'
 import Skeleton from '../../components/ui/skeleton/Skeleton'
 
 const SentEmail = () => {
@@ -10,14 +12,15 @@ const SentEmail = () => {
       title='Email Name'
       rightContent={
         <>
-          <Text>Draft</Text>
-          <Text> : </Text>
-          <Text color='secondary' fontWeight='bold'>Sent</Text>
+          <EmailSenderHeaderAction/>
         </>
       }
     >
       <Text>Add Your Code Here</Text>
     </Skeleton>
+    <EmailSenderFooter
+      showStatus = {false}
+    />
   </>
   )
 }
