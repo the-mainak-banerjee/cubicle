@@ -104,8 +104,8 @@ const MenuBar = ({ editor }) => {
                   <Icon as={FaChevronDown}/>
                 </Flex>
               </MenuButton>
-              <MenuList color='black' pr='4'>
-                <MenuItem>
+              <MenuList color='black'>
+                <MenuItem as='div'>
                     <button
                         onClick={() =>
                           editor.chain().focus().toggleHeading({ level: 1 }).run()
@@ -118,7 +118,7 @@ const MenuBar = ({ editor }) => {
                     </button>
                 </MenuItem>
 
-                <MenuItem>
+                <MenuItem as='div'>
                     <button
                         onClick={() =>
                           editor.chain().focus().toggleHeading({ level: 2 }).run()
@@ -131,7 +131,7 @@ const MenuBar = ({ editor }) => {
                     </button>
                 </MenuItem>
 
-                <MenuItem>
+                <MenuItem as='div'>
                     <button
                         onClick={() =>
                           editor.chain().focus().toggleHeading({ level: 3 }).run()

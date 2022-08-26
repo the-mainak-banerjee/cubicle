@@ -5,7 +5,6 @@ import Link from "@tiptap/extension-link";
 import TextAlign from '@tiptap/extension-text-align'
 import TextStyle from '@tiptap/extension-text-style'
 import Placeholder from '@tiptap/extension-placeholder'
-import HorizontalRule from '@tiptap/extension-horizontal-rule'
 import MenuBar from "./MenuBar";
 import {FontSize} from './FontSizeExtension'
 import './editor.css'
@@ -18,7 +17,6 @@ export const Editor = () => {
       StarterKit,
       Underline,
       Link,
-      HorizontalRule,
       TextStyle,
       FontSize,
       TextAlign.configure({
