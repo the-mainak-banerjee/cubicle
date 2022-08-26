@@ -2,10 +2,10 @@ import { Button, Flex, Icon, Menu, MenuButton, MenuItem, MenuList } from '@chakr
 import React from 'react'
 import { FaChevronCircleDown } from 'react-icons/fa'
 
-const EmailSenderHeaderAction = () => {
+const EmailSenderHeaderAction = ({onOpen}) => {
   return (
     <Flex align='center' gap='2'>
-      <Button variant='main' size={{base:'sm', md:'md'}}>Preview Email</Button>
+      <Button variant='main' size={{base:'sm', md:'md'}} onClick={onOpen}>Preview Email</Button>
       <Menu>
         <MenuButton>
           <Icon as={FaChevronCircleDown}/>
