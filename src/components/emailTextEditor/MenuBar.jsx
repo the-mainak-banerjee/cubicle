@@ -208,8 +208,8 @@ const MenuBar = ({ editor }) => {
               <FaRedo />
             </button>
         </div>
-        <PopUp isOpen={isOpen} onClose={onClose}>
-          <Input type='url' placeholder="Add the URL Here..." value={url} onChange={(e) => setUrl(e.target.value)}/>
+        <PopUp isOpen={isOpen} onClose={onClose} modalTitle={'Add URL'}>
+          <Input type='url' placeholder="Add the URL Here..." autoFocus={true} value={url} onChange={(e) => setUrl(e.target.value)}/>
           <Flex my='4' gap='4'>
               <Button variant='main' onClick={setLink}>Save URL</Button>
               <Button onClick={onClose}>Cancel</Button>
