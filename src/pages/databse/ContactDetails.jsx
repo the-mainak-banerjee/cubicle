@@ -1,16 +1,19 @@
 import { Text } from '@chakra-ui/react'
 import React from 'react'
+import Demo from '../../components/database/Demo'
+import IndividualContactDetail from '../../components/database/IndividualContactDetail'
 import Skeleton from '../../components/ui/skeleton/Skeleton'
-
 const ContactDetails = () => {
   return (
     <>
       <Skeleton
-         isBack={true}
-         title='Contact Name'
-         isSearch={false}
+         isBack={false}
+         title='Database'
+         isSearch={true}
+         buttonText='Add Contact'
       >
-        <Text>Add Your Code Here</Text>
+
+        <IndividualContactDetail></IndividualContactDetail>
       </Skeleton>
     </>
   )

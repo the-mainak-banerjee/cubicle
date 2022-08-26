@@ -3,7 +3,9 @@ import React from 'react'
 import Demo from '../../components/database/Demo'
 import Skeleton from '../../components/ui/skeleton/Skeleton'
 import TopHeader from '../../components/database/TopHeader'
-import MenuBar from '../../components/database/MenuBar'
+import ContactCardSmall from '../../components/database/ContactCardSmall'
+
+import AddContacts from '../../components/database/popup/addContacts'
 const Database = () => {
   return (
     <>
@@ -14,7 +16,8 @@ const Database = () => {
          buttonText='Add Contact'
       >
         <TopHeader></TopHeader>
-        <MenuBar></MenuBar>
+        <ContactCardSmall></ContactCardSmall>
+        <AddContacts></AddContacts>
       </Skeleton>
     </>
   )

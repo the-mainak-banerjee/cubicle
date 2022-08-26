@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import TopHeader from "./components/database/TopHeader";
-import MenuBar from "./components/database/MenuBar";
+import ContactCardSmall from "./components/database/ContactCardSmall";
+import IndividualContactDetail from "./components/database/IndividualContactDetail"
 import CreateWorkspace from "./pages/auth/CreateWorkspace";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import Login from "./pages/auth/Login";
@@ -21,6 +22,9 @@ import UserSettings from "./pages/settings/userSettings/UserSettings";
 import WorkspaceSettings from "./pages/settings/workspaceSettings/WorkspaceSettings";
 
 
+// Database Popups
+import AddContacts from "./components/database/popup/addContacts"
+
 function App() {
   return (
     <>
@@ -29,8 +33,6 @@ function App() {
         <Route path="/signup" element={<Signup />} />{" "}
         <Route path="/login" element={<Login />} />{" "}
         <Route path="/forgotpassword" element={<ForgotPassword />} />{" "}
-
-
         <Route path="/createworkspace" element={<CreateWorkspace />} />
         <Route path="/database" element={<Database />} />{" "}
         <Route path="/database/:contactId" element={<ContactDetails />} />
