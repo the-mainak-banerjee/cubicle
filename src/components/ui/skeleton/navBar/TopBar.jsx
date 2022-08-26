@@ -8,7 +8,7 @@ const TopBar = ({isBack, title, rightContent, isSearch, buttonText, onOpen}) => 
 
 
   return (
-    <Box p={{base:'6', md:'6'}} ml={{base:'0', md:'20vw'}} bg='primary' color='white' position='fixed' width={{base:'full', md:'80vw'}} minH='88px'>
+    <Box p={{base:'6', md:'6'}} ml={{base:'0', md:'20vw'}} bg='primary' color='white' position='fixed' width={{base:'full', md:'80vw'}} minH='88px' zIndex='10'>
         <Flex alignItems='center' justifyContent='space-between'>
             <Flex alignItems='center' gap='4'>
                 <Icon 

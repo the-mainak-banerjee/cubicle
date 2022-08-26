@@ -12,7 +12,7 @@ const SubNavItem = ({name, target, search, icon}) => {
         to={`/${target}${search}`} 
         m='1'
         py='2'
-        px='4'
+        px={{base:'2', md:'4'}}
         color = {location?.search === search ? 'secondary' : 'black'}
         borderRadius="lg"
         border = {location?.search === search ? '1px' : '0px'}

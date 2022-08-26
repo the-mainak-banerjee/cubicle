@@ -5,7 +5,7 @@ import { Link as ReachLink } from 'react-router-dom'
 const EmailCardSmall = ({id, subjectLine, status, publishedDate, engagement}) => {
   return (
     <Box>
-        <Flex align='center' mx='2' my='4'>
+        <Flex align='center' mx={{base:'1', md:'2'}} my='4'>
             <Box>
                 <Link as={ReachLink} to={status === 'sent' ? `/emails/${id}/view` : `/emails/${id}/edit`}>
                     <Text fontWeight='semibold' fontSize='lg' color='primary'>{subjectLine}</Text>
@@ -23,7 +23,7 @@ const EmailCardSmall = ({id, subjectLine, status, publishedDate, engagement}) =>
             </Box>
             <Spacer/>
             {status === 'sent' && <Link as={ReachLink} to={`/emails/${id}/view`} style={{ textDecoration: 'none' }}>
-                <Button variant='main'>View Details</Button>
+                <Button variant='main' size={{base:'sm', md:'md'}}>View Details</Button>
             </Link>}
         </Flex>
         <Divider borderColor='GrayText'/>
