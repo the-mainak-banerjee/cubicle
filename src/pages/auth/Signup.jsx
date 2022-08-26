@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Input,
@@ -18,8 +18,8 @@ import {
 import { Link as ReachLink } from "react-router-dom";
 
 function Signup() {
-  const [show, setShow] = React.useState(false);
-  const handleClick = () => setShow(!show);
+  const [show, setShow] = useState(false);
+  const handleClick = () => setShow(prevState => !prevState);
 
   return (
     <>
