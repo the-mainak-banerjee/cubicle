@@ -1,7 +1,7 @@
 import { Text } from '@chakra-ui/react'
 import React from 'react'
+import Demo from '../../components/database/Demo'
 import Skeleton from '../../components/ui/skeleton/Skeleton'
-
 const Database = () => {
   return (
     <>
@@ -11,7 +11,7 @@ const Database = () => {
          isSearch={true}
          buttonText='Add Contact'
       >
-        <Text>Add Your Code Here</Text>
+        {/* <Text */}
       </Skeleton>
     </>
   )
