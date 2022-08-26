@@ -3,6 +3,8 @@ import Skeleton from '../../components/ui/skeleton/Skeleton'
 import EmailSenderFooter from '../../components/bulkEmailSender/EmailSenderFooter'
 import { useNavigate, useParams } from 'react-router-dom'
 import EmailSenderHeaderAction from '../../components/bulkEmailSender/EmailSenderHeaderAction'
+import { Box } from '@chakra-ui/react'
+import EmailEditor from '../../components/bulkEmailSender/EmailEditor'
 
 const CreateEmail = () => {
 
@@ -24,6 +26,10 @@ const CreateEmail = () => {
           </>
         }
       >
+        <Box pb='32'>
+          <EmailEditor/>
+        </Box>
+
       </Skeleton>
         <EmailSenderFooter
           buttonAction={handleContinueButtonAction}

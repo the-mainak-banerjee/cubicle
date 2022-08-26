@@ -1,4 +1,3 @@
-import { Text } from '@chakra-ui/react'
 import React from 'react'
 import EmailSenderFooter from '../../components/bulkEmailSender/EmailSenderFooter'
 import EmailSenderHeaderAction from '../../components/bulkEmailSender/EmailSenderHeaderAction'
@@ -16,7 +15,6 @@ const SentEmail = () => {
         </>
       }
     >
-      <Text>Add Your Code Here</Text>
     </Skeleton>
     <EmailSenderFooter
       showStatus = {false}
