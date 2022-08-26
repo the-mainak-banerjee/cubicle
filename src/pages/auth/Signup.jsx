@@ -4,6 +4,7 @@ import {
   Input,
   Stack,
   InputLeftAddon,
+  Link,
   InputGroup,
   InputRightElement,
   Button,
@@ -14,6 +15,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { Link as ReachLink } from "react-router-dom";
 
 function Signup() {
   const [show, setShow] = React.useState(false);
@@ -80,7 +82,7 @@ function Signup() {
                 color={useColorModeValue("gray.800", "gray.400")}
                 mt={"3"}
               >
-                Already have an account? Login
+                Already have an account? <Link as={ReachLink} to='/login' color='secondary'>Login</Link>
               </Text>
             </Stack>
           </Box>

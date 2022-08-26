@@ -3,7 +3,7 @@ import React from "react";
 import {
   Input,
   Stack,
-  InputLeftAddon,
+  Link,
   InputGroup,
   InputRightElement,
   Button,
@@ -14,6 +14,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { Link as ReachLink } from "react-router-dom";
 
 function Login() {
   const [show, setShow] = React.useState(false);
@@ -37,7 +38,7 @@ function Login() {
                   Login
                 </Heading>
               </Center>
-              <Input variant="outline" placeholder="Username / Email" />
+              <Input type='email' variant="outline" placeholder="Email" />
 
               <InputGroup size="md">
                 <Input
@@ -51,6 +52,7 @@ function Login() {
                   </Button>
                 </InputRightElement>
               </InputGroup>
+              <Text><Link as={ReachLink} to='/forgotpassword'>Forgot Password</Link></Text>
 
               <Button variant="main" size="md">
                 Login
@@ -61,7 +63,7 @@ function Login() {
                 color={useColorModeValue("gray.800", "gray.400")}
                 mt={"3"}
               >
-                New user? Signup
+                New user? <Link as={ReachLink} to='/signup' color='secondary'>Signup</Link> 
               </Text>
             </Stack>
           </Box>

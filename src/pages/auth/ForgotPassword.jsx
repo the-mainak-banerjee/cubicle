@@ -12,8 +12,9 @@ import {
   Text,
   FormControl,
   Link,
-  Redirect,
 } from "@chakra-ui/react";
+
+import { Link as ReachLink } from 'react-router-dom'
 
 function ForgotPassword() {
   return (
@@ -74,7 +75,7 @@ function ForgotPassword() {
               color={useColorModeValue("gray.800", "gray.400")}
               mt={"3"}
             >
-              Back to Login
+              <Link as={ReachLink} to='/login'>Back To Login</Link>
             </Text>
           </Box>
         </Center>

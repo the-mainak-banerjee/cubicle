@@ -4,12 +4,10 @@ import {
   Input,
   Stack,
   FormControl,
-  useColorModeValue,
   Button,
   Box,
   Center,
   Heading,
-  Text,
   Flex,
 } from "@chakra-ui/react";
 
@@ -36,7 +34,7 @@ function CreateWorkspace() {
                   fontWeight={500}
                   mb={"7%"}
                 >
-                  Create Workspace
+                  Create Your Workspace
                 </Heading>
               </Center>
 
