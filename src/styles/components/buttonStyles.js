@@ -16,6 +16,9 @@ export const ButtonStyles = {
         _hover: {
             bg: mode('secondaryDarken', 'secondaryWhiten')(props),
             boxShadow: 'md',
+        },
+        _disabled:{
+          color: 'black'
         }
     }),
     outlined: (props) => ({
