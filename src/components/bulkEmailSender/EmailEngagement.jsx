@@ -3,7 +3,7 @@ import React from 'react'
 
 const EmailEngagement = ({ email }) => {
   return (
-    <Box mx='2' my='4' bg='white' p='4' minHeight='70vh'>
+    <Box mx='2' my='4' bg='white' p='4' minHeight='70vh' borderRadius='lg'>
       <Box my='2'>
         <Text fontWeight='semibold' fontSize='lg'>Subject</Text>
         <Text fontSize='2xl'>{email.subjectLine}</Text>

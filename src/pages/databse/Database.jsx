@@ -30,13 +30,25 @@ const Database = () => {
          buttonText='Add Contact'
          buttonAction={topBarButtonAction}
       >
-        <Flex width={{base:'full',md:'77vw'}} gap='2' minH='100vh' flexDir={{base:'column', md:'row'}}>
-          <Box width={{base:'100%', md:'80%'}} bg='white' pt='4' pb={{base:'8', md:'4'}} borderRadius='lg'>
+        <Flex flexDirection={{base:'column', md:'row'}} minHeight='70vh' gap='4'>
+          <Box boxShadow="base"
+            pt='4' 
+            pb={{base:'8', md:'4'}}
+            rounded="md"
+            bg="white"
+            borderRadius='lg'
+            width={{base:'100%',md:"100%"}}
+          >
             <TopHeader/>
             <SecondHeader/>
             <ContactCardSmall/>
           </Box>
-          <Box width={{base:'100%',md:'20%'}} py='4' border='1px' borderRadius='lg' borderColor='GrayText'>
+          <Box boxShadow="base"
+            p="6"
+            rounded="md"
+            bg="white"
+            borderRadius='lg'
+            width={{base:'100%',md:"30%"}}>
             <TagBar
               onCreateTagOpen={onCreateTagOpen}
             />
