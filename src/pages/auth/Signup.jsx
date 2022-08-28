@@ -23,7 +23,7 @@ import { CurrUserServices } from "../../backend/services/CurrUserServices";
 
 
 
-function Signup() {
+export function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loading,setLoading] = useState(false)
@@ -105,7 +105,7 @@ function Signup() {
             p={{base: 5, md:10}}
             border="1px"
             borderColor="gray.200"
-            mt={["2%"]}
+            mt='2'
           >
             <Stack spacing={7}>
               <Center>
@@ -170,4 +170,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+

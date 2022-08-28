@@ -18,7 +18,7 @@ import {
 import { Link as ReachLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthService } from "../../backend/services/AuthService";
 
-function Login() {
+export function Login() {
   
   const [show, setShow] = useState(false);
   const [loading,setLoading] = useState(false)
@@ -147,5 +147,3 @@ function Login() {
     </>
   );
 }
-
-export default Login;

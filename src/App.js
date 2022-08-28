@@ -6,11 +6,8 @@ import { Routes, Route }  from 'react-router-dom'
 import { auth, db } from './backend/Firebase';
 import {  selectUserId, setUserDetails, setUserId } from './features/user/userSlice';
 import { setWorkSpacesDetails } from './features/workspace/workSpaceSlice';
-import CreateWorkspace from './pages/auth/CreateWorkspace';
-import ForgotPassword from './pages/auth/ForgotPassword';
-import Login from './pages/auth/Login';
-import Signup from './pages/auth/Signup';
-import Verify from './pages/auth/Verify';
+import { ProtectedRoutes, RestrictedRoutes } from './components/privateRoutes/';
+import {Signup, Login, ForgotPassword, CreateWorkspace} from './pages/auth';
 import CreateEmail from './pages/bulkEmailSender/CreateEmail';
 import EmailDetails from './pages/bulkEmailSender/EmailDetails';
 import EmailSender from './pages/bulkEmailSender/EmailSender';
@@ -38,6 +35,8 @@ function App() {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
         if(currentUser){
             dispatch(setUserId(currentUser.uid))
+        }else{
+            dispatch(setUserId(null))
         }
     });
     return () => {
@@ -80,26 +79,31 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
 
-        <Route path='/signup' element={<Signup/>}/>
-        <Route path='/verify/:email' element={<Verify/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/forgotpassword' element={<ForgotPassword/>}/>
+        <Route element={<RestrictedRoutes/>}>
+          <Route path='/signup' element={<Signup/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/forgotpassword' element={<ForgotPassword/>}/>
+        </Route>
+
         <Route path='/createworkspace' element={<CreateWorkspace/>}/>
 
-        <Route path='/database' element={<Database/>}/>
-        <Route path='/database/:contactId' element={<ContactDetails/>}/>
+        <Route element={<ProtectedRoutes/>}>
+          <Route path='/database' element={<Database/>}/>
+          <Route path='/database/:contactId' element={<ContactDetails/>}/>
 
-        <Route path='/emails' element={<EmailSender/>}/>
-        <Route path='/emails/:emailId/edit' element={<CreateEmail/>}/>
-        <Route path='/emails/:emailId/send' element={<SentEmail/>}/>
-        <Route path='/emails/:emailId/view' element={<EmailDetails/>}/>
+          <Route path='/emails' element={<EmailSender/>}/>
+          <Route path='/emails/:emailId/edit' element={<CreateEmail/>}/>
+          <Route path='/emails/:emailId/send' element={<SentEmail/>}/>
+          <Route path='/emails/:emailId/view' element={<EmailDetails/>}/>
 
-        <Route path='/certificate' element={<CertificateGenerator/>}/>
-        <Route path='/certificate/templates' element={<DesignCertificate/>}/>
-        <Route path='/certificate/:certificateId/customize' element={<CustomizeTemplate/>}/>
+          <Route path='/certificate' element={<CertificateGenerator/>}/>
+          <Route path='/certificate/templates' element={<DesignCertificate/>}/>
+          <Route path='/certificate/:certificateId/customize' element={<CustomizeTemplate/>}/>
 
-        <Route path='/settings' element={<WorkspaceSettings/>}/>
-        <Route path='/userAccount' element={<UserSettings/>}/>
+          <Route path='/settings' element={<WorkspaceSettings/>}/>
+          <Route path='/userAccount' element={<UserSettings/>}/>
+        </Route>
+
 
 
         <Route path='/*' element={<FourOFour/>}/>

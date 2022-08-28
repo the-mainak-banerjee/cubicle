@@ -19,7 +19,7 @@ import { Link as ReachLink, useNavigate } from 'react-router-dom'
 import { AuthService } from "../../backend/services/AuthService";
 
 
-function ForgotPassword() {
+export function ForgotPassword() {
 
   const [userEmail,setUserEmail] = useState('')
   const [loading,setLoading] = useState(false)
@@ -132,4 +132,3 @@ function ForgotPassword() {
   );
 }
 
-export default ForgotPassword;

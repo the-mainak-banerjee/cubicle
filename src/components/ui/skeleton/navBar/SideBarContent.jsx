@@ -22,7 +22,6 @@ const SideBarContent = ({onClose, ...rest}) => {
     const currentUserDetails = useSelector(selectUserDetails)
     const currentWorkSpace = useSelector(state => selectSingleWorkSpaceDetails(state,currentUserDetails?.workspaceId))
 
-
     // Logout handler function
     const handleLogout = async () => {
         await AuthService.logout()
