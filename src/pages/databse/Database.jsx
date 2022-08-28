@@ -1,7 +1,5 @@
-import { Text } from '@chakra-ui/react'
 import React from 'react'
 import ContactCardSmall from '../../components/database/ContactCardSmall'
-import Demo from '../../components/database/Demo'
 import TopHeader from '../../components/database/TopHeader'
 import Skeleton from '../../components/ui/skeleton/Skeleton'
 import CreateTags from '../../components/database/popUps/CreateTags'
