@@ -13,14 +13,14 @@ import {
     return (
         <>
         <Divider borderColor='GrayText'/>
-          <Flex>
-          <Box  p='4'>
-          <Text>Contacts</Text>
+          <Flex color='GrayText'>
+            <Box  p='4'>
+              <Text>Contacts</Text>
             </Box>
-          
-          <Spacer />
-          <Box  p='4'>
-          <b>Subscription Date</b>
+            
+            <Spacer />
+            <Box p='4'>
+              <Text>Subscription Date</Text>
             </Box>
           </Flex>
           <Divider borderColor='GrayText'/>
