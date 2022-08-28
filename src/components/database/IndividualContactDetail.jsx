@@ -7,7 +7,6 @@ import {
     Stack,
     Input,
     Text,
-    Divider,
     Button,
     Avatar,
   } from "@chakra-ui/react";

@@ -1,16 +1,17 @@
 import React from 'react'
 import {
-    Input,
-    Stack,
+  
     Button,
     Box,
     Flex,
-    Text,
-    useColorModeValue, Spacer,Menu, MenuList, MenuItem, MenuButton
+    Spacer,
+    Menu, 
+    MenuList, 
+    MenuItem, 
+    MenuButton
   } from "@chakra-ui/react";
-import {ChevronDownIcon } from '@chakra-ui/icons'
-import Skeleton from '../ui/skeleton/Skeleton';
-import { ButtonStyles } from '../../styles/components/buttonStyles';
+
+import { FaChevronDown } from 'react-icons/fa';
  
 
   function TopHeader() {
@@ -24,7 +25,7 @@ import { ButtonStyles } from '../../styles/components/buttonStyles';
   <Spacer />
   <Menu>
    
-    <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+    <MenuButton as={Button} rightIcon={<FaChevronDown />}>
       Bulk Actions
     </MenuButton>
     <MenuList>

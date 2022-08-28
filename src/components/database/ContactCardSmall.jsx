@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Box, Button, Divider, Flex, Link, Spacer, Text, Avatar } from '@chakra-ui/react'
+import { Box, Divider, Flex, Link, Spacer, Text, Avatar } from '@chakra-ui/react'
 
 function ContactCardSmall() {
     return (

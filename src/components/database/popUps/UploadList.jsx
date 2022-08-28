@@ -17,7 +17,7 @@ function UploadList() {
       <PopUp isOpen={isOpen} onClose={onClose}>
         <Text mb={'5'}>Upload Contact with these tags</Text>
         <Input  mb={'5'} variant="outline" placeholder="Enter Tag Name" />
-        <Input mb={'5'} p={'1'} variant='outline' type={'file'} ACCEPT=".doc,.docx,.pdf" placeholder='Add File' />
+        <Input mb={'5'} p={'1'} variant='outline' type={'file'} accept=".doc,.docx,.pdf" placeholder='Add File' />
 
         <Box
           border="0"
@@ -29,7 +29,7 @@ function UploadList() {
           {/* <Box fontSize='sm'>Step 2 of 4</Box> */}
           <ButtonGroup  size="sm">
             <Button colorScheme="green">Save</Button>
-            <Button  colorScheme="blue">Cancel</Button>
+            <Button  colorScheme="blue" onClick={onClose}>Cancel</Button>
           </ButtonGroup>
         </Box>
       </PopUp>
