@@ -1,5 +1,6 @@
 import React from 'react'
 import Skeleton from '../../components/ui/skeleton/Skeleton'
+import IndividualContactDetail from '../../components/database/IndividualContactDetail'
 const ContactDetails = () => {
   return (
     <>
@@ -9,7 +10,7 @@ const ContactDetails = () => {
          isSearch={true}
          buttonText='Add Contact'
       >
-
+      <IndividualContactDetail></IndividualContactDetail>
       </Skeleton>
     </>
   )
