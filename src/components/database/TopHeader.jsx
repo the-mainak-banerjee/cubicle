@@ -1,8 +1,8 @@
 import React from 'react'
 import {
     Text,
+    Icon,
     Button,
-    Box,
     Flex,
     Spacer,
     Menu, 
@@ -11,16 +11,17 @@ import {
     MenuButton
   } from "@chakra-ui/react";
 
-import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronDown, FaUserFriends } from 'react-icons/fa';
  
 
   function TopHeader() {
     return (
         <>
-          <Flex>
-            <Box p='4'>
+          <Flex px='4' align='center' py='2'>
+            <Flex align='center' gap='2'>
+              <Icon as={FaUserFriends} width='25px' height='25px'/>
               <Text fontWeight='bold' fontSize='lg'>All Contacts</Text>
-            </Box>
+            </Flex>
             
             <Spacer />
             <Menu>

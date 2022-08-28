@@ -1,36 +1,36 @@
 import React from "react";
 import {
   Button,
-  Text,
-  useDisclosure,
   ButtonGroup,
   Input,
   Box,
+  Select,
 } from "@chakra-ui/react";
 import PopUp from "../../ui/popup/PopUp";
 
-function AddSingleContact() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+function AddSingleContact({isAddSingleContactOpen, onAddSingleContactClose}) {
   return (
     <>
-      <Button onClick={onOpen}>Add Single Contact</Button>
-      <PopUp isOpen={isOpen} onClose={onClose}>
-        <Text mb={'5'}>Add Single Contact</Text>
-        {/* <Input  mb={'5'} variant="outline" placeholder="Tag Name" /> */}
-        <Input  mb={'5'} variant='outline' placeholder='Username' />
-        <Input  mb={'5'} variant='outline' placeholder='Email' />
-
+      <PopUp isOpen={isAddSingleContactOpen} onClose={onAddSingleContactClose} modalTitle='Add A Single Contact'>
+        <Input  mb='5' variant='outline' placeholder='Full Name' />
+        <Input  mb='5'variant='outline' placeholder='Email' />
+        <Select placeHolder='Select A Tag'>
+          <option>Select A Tag</option>
+          <option value='tag1'>Tag 1</option>
+          <option value='tag2'>Tag 2</option>
+          <option value='tag3'>Tag 3</option>
+          <option value='tag4'>Tag 4</option>
+        </Select>
         <Box
           border="0"
           display="flex"
           alignItems="center"
           justifyContent="space-between"
-          pb={4} mb={'5'}
+          pb='4' my='5'
         >
-          {/* <Box fontSize='sm'>Step 2 of 4</Box> */}
           <ButtonGroup size="sm">
-            <Button colorScheme="green">Save</Button>
-            <Button  colorScheme="blue">Cancel</Button>
+            <Button variant='main'>Save</Button>
+            <Button variant='danger' onClick={onAddSingleContactClose}>Cancel</Button>
           </ButtonGroup>
         </Box>
       </PopUp>

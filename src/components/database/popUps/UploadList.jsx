@@ -2,22 +2,26 @@ import React from "react";
 import {
   Button,
   Text,
-  useDisclosure,
   ButtonGroup,
   Input,
   Box,
+  Select
 } from "@chakra-ui/react";
 import PopUp from "../../ui/popup/PopUp";
 
-function UploadList() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+function UploadList({ isUploadListOpen, onUploadListClose }) {
   return (
     <>
-      <Button onClick={onOpen}>Upload List</Button>
-      <PopUp isOpen={isOpen} onClose={onClose}>
-        <Text mb={'5'}>Upload Contact with these tags</Text>
-        <Input  mb={'5'} variant="outline" placeholder="Enter Tag Name" />
-        <Input mb={'5'} p={'1'} variant='outline' type={'file'} accept=".doc,.docx,.pdf" placeholder='Add File' />
+      <PopUp isOpen={isUploadListOpen} onClose={onUploadListClose} modalTitle='Upload List'>
+      <Select placeHolder='Select A Tag' mb='5'>
+          <option>Select A Tag</option>
+          <option value='tag1'>Tag 1</option>
+          <option value='tag2'>Tag 2</option>
+          <option value='tag3'>Tag 3</option>
+          <option value='tag4'>Tag 4</option>
+        </Select>
+        <Text mb='2'>Upload A List of Contacts(Only CSV file)</Text>
+        <Input mb='5' p={'1'} variant='outline' type={'file'} accept=".csv" placeholder='Add File' />
 
         <Box
           border="0"
@@ -28,8 +32,8 @@ function UploadList() {
         >
           {/* <Box fontSize='sm'>Step 2 of 4</Box> */}
           <ButtonGroup  size="sm">
-            <Button colorScheme="green">Save</Button>
-            <Button  colorScheme="blue" onClick={onClose}>Cancel</Button>
+            <Button variant='main'>Save</Button>
+            <Button variant='danger' onClick={onUploadListClose}>Cancel</Button>
           </ButtonGroup>
         </Box>
       </PopUp>

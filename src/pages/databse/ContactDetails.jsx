@@ -10,7 +10,7 @@ const ContactDetails = () => {
          isSearch={true}
          buttonText='Add Contact'
       >
-      <IndividualContactDetail></IndividualContactDetail>
+      <IndividualContactDetail/>
       </Skeleton>
     </>
   )

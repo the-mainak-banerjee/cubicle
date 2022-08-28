@@ -2,7 +2,7 @@ import { Box, Button, Flex, Heading, Icon, Input, InputGroup, InputLeftElement }
 import React, { useState } from 'react'
 import { FaArrowLeft, FaBars, FaSearch, FaTimes } from 'react-icons/fa'
 
-const TopBar = ({isBack, title, rightContent, isSearch, buttonText, onOpen}) => {
+const TopBar = ({isBack, title, rightContent, isSearch, buttonText, buttonAction, onOpen}) => {
 
     const [showSearchBox,setShowSearchBox] = useState(false)
 
@@ -52,7 +52,7 @@ const TopBar = ({isBack, title, rightContent, isSearch, buttonText, onOpen}) => 
 
                             {isSearch && <Icon display={{base:'block', md:'none'}} fontSize="20" mr='1'  as={showSearchBox ? FaTimes : FaSearch} cursor='pointer' onClick={() => setShowSearchBox(prevState => !prevState)}/>}
 
-                            {buttonText && <Button variant='main' size={{base:'sm', md:'md'}} paddingX={{base:'2', md:'10'}}>{buttonText}</Button>}
+                            {buttonText && <Button variant='main' size={{base:'sm', md:'md'}} paddingX={{base:'2', md:'10'}} onClick={buttonAction}>{buttonText}</Button>}
                         </>
                     )
                 }

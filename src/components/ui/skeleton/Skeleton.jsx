@@ -5,8 +5,9 @@ import TopBar from './navBar/TopBar';
 import BodyWrapper from './bodyWrapper/BodyWrapper';
 
 
-const Skeleton = ({isBack, title, rightContent, isSearch, buttonText, children}) => {
+const Skeleton = ({isBack, title, rightContent, isSearch, buttonText, buttonAction, children}) => {
 
+  // Mobile sidebar drawer handler
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -23,6 +24,7 @@ const Skeleton = ({isBack, title, rightContent, isSearch, buttonText, children})
         title={title}
         isSearch={isSearch}
         buttonText={buttonText}
+        buttonAction={buttonAction}
         rightContent={rightContent}
         onOpen={onOpen}
       />
