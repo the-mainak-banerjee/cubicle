@@ -37,22 +37,24 @@ import { email } from '../../utils/DummyData';
             </Flex>
             <Divider borderColor='GrayText'/>
             {/* <Text textAlign='center' fontSize='xl' py='4'>No Email To Show</Text> */}
-            {
-              email.filter(emailItem => emailItem.status === 'sent').map(item => {
-                return (
-                  <EmailCardSmall
-                    key={item.id}
-                    id={item.id}
-                    subjectLine={item.subjectLine}
-                    status={item.status}
-                    publishedDate={item.publishedDate}
-                    engagement={item.engagement}
-                  />
-                )
-              })
-            }
-            
+            <Box px='4'>
+              {
+                email.filter(emailItem => emailItem.status === 'sent').map(item => {
+                  return (
+                    <EmailCardSmall
+                      key={item.id}
+                      id={item.id}
+                      subjectLine={item.subjectLine}
+                      status={item.status}
+                      publishedDate={item.publishedDate}
+                      engagement={item.engagement}
+                    />
+                  )
+                })
+              }
+            </Box>
           </Box>
+
           <Box
             boxShadow="base"
             p="6"
@@ -70,40 +72,38 @@ import { email } from '../../utils/DummyData';
                 swatigoel37@gmail.com
               </Heading>
             </Center>
-            <Stack spacing={4}>
-              
-                <Box boxShadow="xs" w={'base'} px="4" py="2" rounded="md" bg="white">
-                  <Center>
-                  <Text>
-                    Swati Goel
-                  </Text></Center>
-                </Box>
-              
-                <Box boxShadow="xs" w={'100%'} px="4" py="2" rounded="md" bg="white">
-                  <Center>
-                  <Text>
-                  swatigoel37@gmail.com
-                  </Text></Center>
-                </Box>
-
-                <Box boxShadow="xs" w={'100%'} px="4" py="2" rounded="md" bg="white">
-                  <Center>
-                  <Text>
-                    Added at
-                  </Text></Center>
-                  
-                </Box>
-                <Box boxShadow="xs" w={'100%'} px="4" py="2" rounded="md" bg="white">
+            <Stack spacing={4}> 
+              <Box boxShadow="xs" w={'base'} px="4" py="2" rounded="md" bg="white">
+                <Center>
                 <Text>
-                    Tags
-                  </Text>
-                  <Input my={'4'} placeholder='Enter Tags'></Input>
-                  <Center>
-                  </Center>
-                </Box>
+                  Swati Goel
+                </Text></Center>
+              </Box>
+            
+              <Box boxShadow="xs" w={'100%'} px="4" py="2" rounded="md" bg="white">
+                <Center>
+                <Text>
+                swatigoel37@gmail.com
+                </Text></Center>
+              </Box>
+              <Box boxShadow="xs" w={'100%'} px="4" py="2" rounded="md" bg="white">
+                <Center>
+                <Text>
+                  Added at
+                </Text></Center>
+                
+              </Box>
+              <Box boxShadow="xs" w={'100%'} px="4" py="2" rounded="md" bg="white">
+              <Text>
+                  Tags
+                </Text>
+                <Input my={'4'} placeholder='Enter Tags'></Input>
+                <Center>
+                </Center>
+              </Box>
             </Stack>  
             <Center>
-              <Button variant={"main"} mt={"10"}>
+              <Button variant={"danger"} mt={"10"}>
                 Delete Contact
               </Button>
             </Center>
