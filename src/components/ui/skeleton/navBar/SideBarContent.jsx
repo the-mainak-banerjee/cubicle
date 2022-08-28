@@ -1,7 +1,7 @@
 import { Avatar, Box, Button, CloseButton, Divider, Flex, Heading, Link, Text, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { FaDatabase, FaEnvelope, FaAward, FaCog } from 'react-icons/fa'
+import { FaDatabase, FaEnvelope, FaTasks, FaAward, FaCog } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
 import NavItem from './NavItem'
 import { AuthService } from '../../../../backend/services/AuthService'
@@ -11,7 +11,7 @@ import { selectSingleWorkSpaceDetails } from '../../../../features/workspace/wor
 const linkItems = [
     {name: 'Database', icon: FaDatabase, target: 'database'},
     {name: 'Email Management', icon: FaEnvelope, target: 'emails'},
-    // {name: 'Database', icon: FaDatabase, target: 'database'},
+    {name: 'Task Management', icon: FaTasks, target: 'taskManager'},
     {name: 'Certificate Generator', icon: FaAward, target: 'certificate'},
     {name: 'Workspace Settings', icon: FaCog, target: 'settings'},
 ]

@@ -21,6 +21,7 @@ import FourOFour from './pages/fallback/FourOFour';
 import Home from "./pages/home/Home";
 import UserSettings from './pages/settings/userSettings/UserSettings';
 import WorkspaceSettings from './pages/settings/workspaceSettings/WorkspaceSettings';
+import TaskManagement from './pages/taskManagement/TaskManagement';
 
 
 
@@ -99,6 +100,8 @@ function App() {
           <Route path='/certificate' element={<CertificateGenerator/>}/>
           <Route path='/certificate/templates' element={<DesignCertificate/>}/>
           <Route path='/certificate/:certificateId/customize' element={<CustomizeTemplate/>}/>
+
+          <Route path='/taskManager' element={<TaskManagement/>}/>
 
           <Route path='/settings' element={<WorkspaceSettings/>}/>
           <Route path='/userAccount' element={<UserSettings/>}/>

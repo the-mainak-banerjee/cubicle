@@ -1,10 +1,18 @@
+import { Text } from '@chakra-ui/react'
 import React from 'react'
-import NavBar from '../../components/ui/navBar/NavBar'
+import Skeleton from '../../components/ui/skeleton/Skeleton'
+
 
 const TaskManagement = () => {
   return (
     <>
-      <NavBar/>
+      <Skeleton
+        isBack={false}
+        title='Workspace Settings'
+        isSearch={false}
+      >
+        <Text>Add Your Code Here</Text>
+     </Skeleton>
     </>
   )
 }
