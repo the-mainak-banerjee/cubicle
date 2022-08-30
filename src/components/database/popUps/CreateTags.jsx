@@ -7,8 +7,14 @@ import {
   Box,
 } from "@chakra-ui/react";
 import PopUp from "../../ui/popup/PopUp";
+import { useSelector } from "react-redux";
+import { selectAllTags } from "../../../features/database/contactsSlice";
 
 function CreateTags({ isCreateTagOpen, onCreateTagClose}) {
+
+  const allTags = useSelector(selectAllTags)
+
+  console.log(allTags)
 
   return (
     <>
