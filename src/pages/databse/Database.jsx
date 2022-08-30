@@ -9,6 +9,8 @@ import UploadList from '../../components/database/popUps/UploadList'
 import SecondHeader from '../../components/database/SecondHeader'
 import { useDisclosure, Flex, Box } from '@chakra-ui/react'
 import TagBar from '../../components/database/TagBar'
+import { useSelector } from "react-redux";
+import { selectAllTags } from "../../features/database/contactsSlice";
 
 
 const Database = () => {
@@ -16,9 +18,15 @@ const Database = () => {
   const { isOpen: isAddSingleContactOpen, onOpen: onAddSingleContactOpen, onClose : onAddSingleContactClose } = useDisclosure();
   const { isOpen: isUploadListOpen, onOpen: onUploadListOpen, onClose : onUploadListClose } = useDisclosure();
   const { isOpen: isCreateTagOpen, onOpen: onCreateTagOpen, onClose : onCreateTagClose } = useDisclosure();
+  const allTags = useSelector(selectAllTags)
+
 
   const topBarButtonAction = () => {
-    onImportContactOpen()
+    if(allTags){
+      onImportContactOpen()
+    }else{
+      onCreateTagOpen()
+    }
   }
 
   return (
@@ -58,6 +66,8 @@ const Database = () => {
         <CreateTags
           isCreateTagOpen={isCreateTagOpen}
           onCreateTagClose={onCreateTagClose}
+          onImportContactOpen={onImportContactOpen}
+          allTags={allTags}
         />
         <ImportContacts
           isImportContactOpen={isImportContactOpen}

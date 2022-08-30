@@ -7,6 +7,6 @@ export default configureStore({
     reducer:{
         user: userReducer,
         workSpace: workSpaceReducer,
-        contact: contactsReducer,
+        contacts: contactsReducer,
     },
 })
