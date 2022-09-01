@@ -77,4 +77,4 @@ const SideBarContent = ({onClose, ...rest}) => {
   )
 }
 
-export default SideBarContent
+export default SideBarContent;
