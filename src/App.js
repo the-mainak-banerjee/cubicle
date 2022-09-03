@@ -60,7 +60,7 @@ function App() {
   },[userId,dispatch])
 
 
-  // Get current user workspaces details
+  // Get all workspaces details
   useEffect(() => {
     if(userId){
       let unsubscribe = onSnapshot(query(collection(db,'workspaces'),where('admin', '==', `${userId}`)),(querySnapshot) => {

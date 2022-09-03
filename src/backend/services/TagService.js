@@ -4,12 +4,15 @@ import { db } from "../Firebase";
 
 export const TagService = {
 
-    createTag: async(tag,workspaceId) => {
+    createTag: async(tag,workspaceId,setLoading) => {
+        setLoading(true)
         try{
             await setDoc(doc(db,'workspaces', `${workspaceId}`, 'tags', `${tag.id}`),tag)
             return null
         }catch(error){
             return error
+        }finally{
+            setLoading(false)
         }
     }
 };

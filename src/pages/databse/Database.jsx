@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ContactCardSmall from '../../components/database/ContactCardSmall'
 import TopHeader from '../../components/database/TopHeader'
 import Skeleton from '../../components/ui/skeleton/Skeleton'
@@ -7,10 +7,14 @@ import ImportContacts from '../../components/database/popUps/ImportContacts'
 import AddSingleContact from '../../components/database/popUps/AddSingleContact'
 import UploadList from '../../components/database/popUps/UploadList'
 import SecondHeader from '../../components/database/SecondHeader'
-import { useDisclosure, Flex, Box } from '@chakra-ui/react'
+import { useDisclosure, Flex, Box, Text } from '@chakra-ui/react'
 import TagBar from '../../components/database/TagBar'
-import { useSelector } from "react-redux";
-import { selectAllTags } from "../../features/database/contactsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { selectAllTags, selectAllContacts, setTag, setContacts } from "../../features/database/contactsSlice";
+import { selectUserDetails } from '../../features/user/userSlice'
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
+import { db } from '../../backend/Firebase'
+import formatDate from '../../utils/FormatData'
 
 
 const Database = () => {
@@ -19,7 +23,9 @@ const Database = () => {
   const { isOpen: isUploadListOpen, onOpen: onUploadListOpen, onClose : onUploadListClose } = useDisclosure();
   const { isOpen: isCreateTagOpen, onOpen: onCreateTagOpen, onClose : onCreateTagClose } = useDisclosure();
   const allTags = useSelector(selectAllTags)
-
+  const allContacts = useSelector(selectAllContacts)
+  const currentUserDetails = useSelector(selectUserDetails)
+  const dispatch = useDispatch()
 
   const topBarButtonAction = () => {
     if(allTags){
@@ -28,6 +34,37 @@ const Database = () => {
       onCreateTagOpen()
     }
   }
+
+  useEffect(() => {
+    if(currentUserDetails?.workspaceId){
+      let unsubscribe = onSnapshot(query(collection(db,`workspaces/${currentUserDetails.workspaceId}/tags`),orderBy('name','asc')),(querySnapshot) => {
+        const allTags = querySnapshot.docs.map((doc) => ({
+          ...doc.data(),
+          createdAt: formatDate(doc.data().createdAt)
+        }))
+        dispatch(setTag(allTags))
+      })
+      return () => {
+        unsubscribe && unsubscribe();
+      };
+    }
+  },[currentUserDetails, dispatch])
+  
+  useEffect(() => {
+    if(currentUserDetails?.workspaceId){
+      let unsubscribe = onSnapshot(query(collection(db,`workspaces/${currentUserDetails.workspaceId}/contacts`),orderBy('createdAt','asc')),(querySnapshot) => {
+        const allContacts = querySnapshot.docs.map((doc) => ({
+          ...doc.data(),
+          createdAt: formatDate(doc.data().createdAt)
+        }))
+        dispatch(setContacts(allContacts))
+      })
+      return () => {
+        unsubscribe && unsubscribe();
+      };
+    }
+  },[currentUserDetails, dispatch])
+
 
   return (
     <>
@@ -49,7 +86,20 @@ const Database = () => {
           >
             <TopHeader/>
             <SecondHeader/>
-            <ContactCardSmall/>
+            {allContacts?.length > 0
+              ? (
+                allContacts?.map(contact => {
+                  return (
+                    <ContactCardSmall
+                      key={contact.id}
+                      contact={contact}
+                    />
+                  )
+                })
+              ) : (
+                <Text textAlign='center' fontSize='xl' py='4' color='black'>No Contact To Show</Text>
+              )
+            }
           </Box>
           <Box boxShadow="base"
             p="6"
@@ -59,6 +109,7 @@ const Database = () => {
             width={{base:'100%',md:"30%"}}>
             <TagBar
               onCreateTagOpen={onCreateTagOpen}
+              allTags={allTags}
             />
           </Box>
         </Flex>
@@ -78,10 +129,12 @@ const Database = () => {
         <AddSingleContact
           isAddSingleContactOpen={isAddSingleContactOpen}
           onAddSingleContactClose={onAddSingleContactClose}
+          allTags={allTags}
         />
         <UploadList
           isUploadListOpen={isUploadListOpen}
           onUploadListClose={onUploadListClose}
+          allTags={allTags}
         />
       </Skeleton>
     </>
