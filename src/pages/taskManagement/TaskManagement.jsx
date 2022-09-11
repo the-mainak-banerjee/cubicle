@@ -19,7 +19,7 @@ const TaskManagement = () => {
   //     const [searchParams] = useSearchParams()
   return (
     <>
-      <Skeleton isBack={false} title="Task Management" isSearch={true}>
+      <Skeleton isBack={false} title="Task Management" isSearch={true} buttonText = "Add Task">
         <SubNavBar
           linkItems={linkItems}
           rightAction={true}

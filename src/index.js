@@ -10,16 +10,19 @@ import store from './app/store'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <ChakraProvider theme={brandTheme}>
-        <App />
-        </ChakraProvider>
-      </Provider>
-    </BrowserRouter>
-  </React.StrictMode>
+root.render( <
+    React.StrictMode >
+    <
+    BrowserRouter >
+    <
+    Provider store = { store } >
+    <
+    ChakraProvider theme = { brandTheme } >
+    <
+    App / >
+    <
+    /ChakraProvider> <
+    /Provider> <
+    /BrowserRouter> <
+    /React.StrictMode>
 );
-
-
